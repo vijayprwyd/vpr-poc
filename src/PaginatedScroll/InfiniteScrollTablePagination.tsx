@@ -5,7 +5,6 @@ import { useQuery } from "./useQuery";
 export default function InfiniteScrollTablePagination() {
   const [page, setCurrentPage] = useState(0);
   const fetchUsers = useCallback(() => fakePromise(page, 10), [page]);
-  console.log('Re-rendered');
 
   const { loading, response } = useQuery<UserResponse>(fetchUsers);
 
